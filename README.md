@@ -1,2 +1,2 @@
-# RPG-Tutorial
-The Unity Project for the RPG Tutorial Series!
+# RPG Tutorial
+This is the source code for the RPG Tutorial!

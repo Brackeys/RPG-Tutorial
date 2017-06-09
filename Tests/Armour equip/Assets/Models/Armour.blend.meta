@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: a31ce011d6f634f7593cbf72b0e6c5a6
+timeCreated: 1497011597
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_Lower_L
+    100002: Arm_Lower_R
+    100004: Arm_Upper_L
+    100006: Arm_Upper_R
+    100008: Armature
+    100010: //RootNode
+    100012: Chest
+    100014: Cube
+    100016: Cube_001
+    100018: Cube_002
+    100020: Cube_003
+    100022: Cube_004
+    100024: Fingers_01_L
+    100026: Fingers_01_R
+    100028: Fingers_02_L
+    100030: Fingers_02_R
+    100032: Foot_L
+    100034: Foot_R
+    100036: Hand_L
+    100038: Hand_R
+    100040: Head
+    100042: Hips
+    100044: Leg_ik_L
+    100046: Leg_ik_R
+    100048: Leg_Lower_L
+    100050: Leg_Lower_R
+    100052: Leg_Upper_L
+    100054: Leg_Upper_R
+    100056: Neck
+    100058: Spine
+    100060: Thumb_01_L
+    100062: Thumb_01_R
+    100064: Thumb_02_L
+    100066: Thumb_02_R
+    100068: Toes_L
+    100070: Toes_R
+    100072: Helmet
+    100074: Platebody
+    100076: Platelegs
+    100078: Sword
+    400000: Arm_Lower_L
+    400002: Arm_Lower_R
+    400004: Arm_Upper_L
+    400006: Arm_Upper_R
+    400008: Armature
+    400010: //RootNode
+    400012: Chest
+    400014: Cube
+    400016: Cube_001
+    400018: Cube_002
+    400020: Cube_003
+    400022: Cube_004
+    400024: Fingers_01_L
+    400026: Fingers_01_R
+    400028: Fingers_02_L
+    400030: Fingers_02_R
+    400032: Foot_L
+    400034: Foot_R
+    400036: Hand_L
+    400038: Hand_R
+    400040: Head
+    400042: Hips
+    400044: Leg_ik_L
+    400046: Leg_ik_R
+    400048: Leg_Lower_L
+    400050: Leg_Lower_R
+    400052: Leg_Upper_L
+    400054: Leg_Upper_R
+    400056: Neck
+    400058: Spine
+    400060: Thumb_01_L
+    400062: Thumb_01_R
+    400064: Thumb_02_L
+    400066: Thumb_02_R
+    400068: Toes_L
+    400070: Toes_R
+    400072: Helmet
+    400074: Platebody
+    400076: Platelegs
+    400078: Sword
+    4300000: Cube_004
+    4300002: Cube_003
+    4300004: Cube_002
+    4300006: Cube
+    4300008: Cube_001
+    4300010: Helmet
+    4300012: Platelegs
+    4300014: Platebody
+    4300016: Sword
+    7400000: Default Take
+    7400002: Walk
+    7400004: Idle
+    9500000: //RootNode
+    13700000: Cube
+    13700002: Cube_001
+    13700004: Cube_002
+    13700006: Cube_003
+    13700008: Cube_004
+    13700010: Helmet
+    13700012: Platebody
+    13700014: Platelegs
+    13700016: Sword
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 1
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 750ab869de9c94a12b39b41efc4994bd,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

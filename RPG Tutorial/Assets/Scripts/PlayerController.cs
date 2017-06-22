@@ -1,10 +1,14 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerController : MonoBehaviour {
 
 	public Interactable focus;
+
+	public LayerMask movementMask;
+	public LayerMask interactionMask;
 
 	NavMeshAgent agent;		// Reference to our NavMeshAgent
 	Camera cam;				// Reference to our camera
@@ -19,6 +23,9 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (EventSystem.current.IsPointerOverGameObject())
+			return;
+
 		// If we press left mouse
 		if (Input.GetMouseButtonDown(0))
 		{
@@ -27,15 +34,31 @@ public class PlayerController : MonoBehaviour {
 			RaycastHit hit;
 
 			// If we hit
-			if (Physics.Raycast(ray, out hit))
+			if (Physics.Raycast(ray, out hit, movementMask))
 			{
+				agent.SetDestination(hit.point);
+				SetFocus(null);
+			}
+		}
+
+		// If we press right mouse
+		if (Input.GetMouseButtonDown(1))
+		{
+			// Shoot out a ray
+			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+
+			// If we hit
+			if (Physics.Raycast(ray, out hit, 100f, interactionMask))
+			{
+				agent.SetDestination(hit.collider.transform.position);
 				SetFocus(hit.collider.GetComponent<Interactable>());
-				Move(hit.point);
 			}
 		}
 
 	}
 
+	// Set our focus to a new focus
 	void SetFocus (Interactable newFocus)
 	{
 		// If our focus has changed
@@ -53,20 +76,12 @@ public class PlayerController : MonoBehaviour {
 		{
 			// Let our focus know that it's being focused
 			focus.OnFocused(agent);
+			agent.stoppingDistance = 2f;
+		} else
+		{
+			agent.stoppingDistance = 0f;
 		}
 
-	}
-
-	void Move (Vector3 point)
-	{
-		// If we have a focus we want to leave a bit of space
-		if (focus == null)
-			agent.stoppingDistance = 0f;
-		else
-			agent.stoppingDistance = 2f;
-
-		// Move to the point
-		agent.SetDestination(point);
 	}
 
 }

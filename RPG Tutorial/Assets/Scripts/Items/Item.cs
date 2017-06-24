@@ -1,24 +1,24 @@
 using UnityEngine;
 
-public class Item : Interactable {
+/* The base item class. All items should derive from this. */
 
-	public InventoryItem item;	// Item to put in the inventory if picked up
+[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
+public class Item : ScriptableObject {
 
-	// When the player interacts with the player
-	public override void Interact()
+	new public string name = "New Item";	// Name of the item
+	public Sprite icon = null;				// Item icon
+
+	// Called when the item is pressed in the inventory
+	public virtual void Use ()
 	{
-		base.Interact();
-
-		PickUp();
+		// Use the item
+		// Something may happen
 	}
 
-	// Pick up the item
-	void PickUp ()
+	// Call this method to remove the item from inventory
+	public void RemoveFromInventory ()
 	{
-		Debug.Log("Picking up " + item.name);
-		Inventory.instance.Add(item);	// Add to inventory
-
-		Destroy(gameObject);	// Destroy item from scene
+		Inventory.instance.Remove(this);
 	}
 
 }

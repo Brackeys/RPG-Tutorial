@@ -2,12 +2,14 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
+/* This object manages the inventory UI. */
+
 public class InventoryUI : MonoBehaviour {
 
-	public GameObject inventoryUI;
-	public Transform itemsParent;
+	public GameObject inventoryUI;	// The entire UI
+	public Transform itemsParent;	// The parent object of all the items
 
-	Inventory inventory;
+	Inventory inventory;	// Our current inventory
 
 	void Start ()
 	{
@@ -15,6 +17,7 @@ public class InventoryUI : MonoBehaviour {
 		inventory.onItemChangedCallback += UpdateUI;
 	}
 
+	// Check to see if we should open/close the inventory
 	void Update ()
 	{
 		if (Input.GetButtonDown("Inventory"))
@@ -24,6 +27,10 @@ public class InventoryUI : MonoBehaviour {
 		}
 	}
 
+	// Update the inventory UI by:
+	//		- Adding items
+	//		- Clearing empty slots
+	// This is called using a delegate on the Inventory.
 	public void UpdateUI ()
 	{
 		InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();

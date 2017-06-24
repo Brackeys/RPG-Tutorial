@@ -1,5 +1,7 @@
 using UnityEngine;
 
+/* Tint the object when hovered. */
+
 public class ColorOnHover : MonoBehaviour {
 
 	public Color color;

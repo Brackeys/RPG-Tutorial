@@ -15,12 +15,14 @@ public class EquipmentManager : MonoBehaviour {
 
 	#endregion
 
+	// All the slots
 	public Equipment head;
 	public Equipment chest;
 	public Equipment legs;
 	public Equipment weapon;
 	public Equipment shield;
 
+	// Callback for when an item is equipped
 	public delegate void OnItemEquipped(Equipment newItem, Equipment oldItem);
 	public OnItemEquipped onItemEquippedCallback;
 
@@ -31,10 +33,13 @@ public class EquipmentManager : MonoBehaviour {
 		inventory = Inventory.instance;
 	}
 
+	// Equip a new item
 	public void Equip (Equipment newItem)
 	{
 		Equipment oldItem = null;
 
+		// Find out what slot the item fits in
+		// and put it there.
 		switch (newItem.equipSlot)
 		{
 			case EquipmentSlot.Head:
@@ -59,11 +64,14 @@ public class EquipmentManager : MonoBehaviour {
 				break;
 		}
 
+		// If there was already an item in the slot
+		// make sure to put it back in the inventory
 		if (oldItem != null)
 		{
 			inventory.Add(oldItem);
 		}
 
+		// An item has been equipped so we trigger the callback
 		if (onItemEquippedCallback != null)
 			onItemEquippedCallback.Invoke(newItem, oldItem);
 

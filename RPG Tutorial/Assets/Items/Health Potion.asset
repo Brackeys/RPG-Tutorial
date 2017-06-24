@@ -8,9 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f47222897a906df4f87f1f02fc026303, type: 3}
+  m_Script: {fileID: 11500000, guid: 05a9891fc0015954dad1e634a0230940, type: 3}
   m_Name: Health Potion
   m_EditorClassIdentifier: 
-  name: Health Potion
+  name: Minor Healing Potion
   icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  isStackable: 1
+  healthGain: 40

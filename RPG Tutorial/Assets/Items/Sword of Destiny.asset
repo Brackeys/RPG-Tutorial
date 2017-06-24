@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sword of Destiny
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  isStackable: 0
   equipSlot: 3
   armorModifier: 0
+  damageModifier: 10

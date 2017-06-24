@@ -21,10 +21,10 @@ public class Inventory : MonoBehaviour {
 	public int space = 10;	// Amount of item spaces
 
 	// Our current list of items in the inventory
-	public List<InventoryItem> items = new List<InventoryItem>();
+	public List<Item> items = new List<Item>();
 
 	// Add a new item if enough room
-	public void Add (InventoryItem item)
+	public void Add (Item item)
 	{
 		if (items.Count >= space)
 		{
@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour {
 	}
 
 	// Remove an item
-	public void Remove (InventoryItem item)
+	public void Remove (Item item)
 	{
 		items.Remove(item);
 

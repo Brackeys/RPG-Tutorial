@@ -1,36 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/* Contains all the stats for a character. */
 
 public class CharacterStats : MonoBehaviour {
 
-	public Stat maxHealth;
-	private int currentHealth;
+	public Stat maxHealth;			// Maximum amount of health
+	[SerializeField]
+	private int currentHealth;		// Current amount of health
 
+	public Stat damage;
 	public Stat armor;
 
-	void Start ()
+	// Start with max HP.
+	public virtual void Start ()
 	{
-		EquipmentManager.instance.onItemEquippedCallback += OnEquippedItem;
-
 		currentHealth = maxHealth.GetValue();
 	}
 
+	// Damage the character
 	public void TakeDamage (int damage)
 	{
+		// Subtract the armor value - Make sure damage doesn't go below 0.
+		damage -= armor.GetValue();
+		Mathf.Clamp(damage, 0, 99999);
+
+		// Subtract damage from health
 		currentHealth -= damage;
+		Debug.Log(transform.name + " takes " + damage + " damage.");
+
+		// If we hit 0. Die.
 		if (currentHealth <= 0)
 		{
-			Debug.Log("PLAYER DEATH");
+			Die();
 		}
 	}
 
-	void OnEquippedItem (Equipment newItem, Equipment oldItem)
+	// Heal the character.
+	public void Heal (int amount)
 	{
-		armor.AddModifier(newItem.armorModifier);
+		currentHealth += amount;
+		currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth.GetValue());
+	}
 
-		if (oldItem != null)
-			armor.RemoveModifier(oldItem.armorModifier);
+	// Die. This can be overwritten.
+	public virtual void Die ()
+	{
+		Debug.Log(transform.name + " died.");
+		Destroy(gameObject);
 	}
 
 }

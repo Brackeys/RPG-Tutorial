@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class EquipmentManager : MonoBehaviour {
 
 	#region Singleton
@@ -15,12 +17,12 @@ public class EquipmentManager : MonoBehaviour {
 
 	#endregion
 
-	// All the slots
-	public Equipment head;
-	public Equipment chest;
-	public Equipment legs;
-	public Equipment weapon;
-	public Equipment shield;
+	public Equipment[] defaultWear;
+
+	Equipment[] currentEquipment;
+	SkinnedMeshRenderer[] currentMeshes;
+
+	public SkinnedMeshRenderer targetMesh;
 
 	// Callback for when an item is equipped
 	public delegate void OnItemEquipped(Equipment newItem, Equipment oldItem);
@@ -31,6 +33,14 @@ public class EquipmentManager : MonoBehaviour {
 	void Start ()
 	{
 		inventory = Inventory.instance;
+
+		int numSlots = System.Enum.GetNames (typeof(EquipmentSlot)).Length;
+		currentEquipment = new Equipment[numSlots];
+		currentMeshes = new SkinnedMeshRenderer[numSlots];
+
+		foreach (Equipment e in defaultWear) {
+			Equip (e);
+		}
 	}
 
 	// Equip a new item
@@ -40,33 +50,11 @@ public class EquipmentManager : MonoBehaviour {
 
 		// Find out what slot the item fits in
 		// and put it there.
-		switch (newItem.equipSlot)
-		{
-			case EquipmentSlot.Head:
-				oldItem = head;
-				head = newItem;
-				break;
-			case EquipmentSlot.Chest:
-				oldItem = chest;
-				chest = newItem;
-				break;
-			case EquipmentSlot.Legs:
-				oldItem = legs;
-				legs = newItem;
-				break;
-			case EquipmentSlot.Weapon:
-				oldItem = weapon;
-				weapon = newItem;
-				break;
-			case EquipmentSlot.Shield:
-				oldItem = shield;
-				shield = newItem;
-				break;
-		}
+		int slotIndex = (int)newItem.equipSlot;
 
 		// If there was already an item in the slot
 		// make sure to put it back in the inventory
-		if (oldItem != null)
+		if (currentEquipment[slotIndex] != null)
 		{
 			inventory.Add(oldItem);
 		}
@@ -76,6 +64,22 @@ public class EquipmentManager : MonoBehaviour {
 			onItemEquippedCallback.Invoke(newItem, oldItem);
 
 		Debug.Log(newItem.name + " equipped!");
+
+		AttachToMesh (newItem.prefab, slotIndex);
+		//equippedItems [itemIndex] = newMesh.gameObject;
+
+	}
+
+	void AttachToMesh(SkinnedMeshRenderer mesh, int slotIndex) {
+
+		if (currentMeshes [slotIndex] != null) {
+			Destroy (currentMeshes [slotIndex].gameObject);
+		}
+
+		SkinnedMeshRenderer newMesh = Instantiate(mesh) as SkinnedMeshRenderer;
+		newMesh.bones = targetMesh.bones;
+		newMesh.rootBone = targetMesh.rootBone;
+		currentMeshes [slotIndex] = newMesh;
 	}
 
 }

@@ -1,29 +1,31 @@
 using UnityEngine;
-
+using System.Linq;
 /* Tint the object when hovered. */
 
 public class ColorOnHover : MonoBehaviour {
 
 	public Color color;
+	public Renderer meshRenderer;
 
-	Color previousColor;
+	Color[] originalColours;
 
-	Renderer rend;
-
-	void Start ()
-	{
-		rend = GetComponent<Renderer>();
-    }
+	void Start() {
+		originalColours = meshRenderer.materials.Select (x => x.color).ToArray ();
+	}
 
 	void OnMouseEnter ()
 	{
-		previousColor = rend.material.color;
-        rend.material.color *= color;
+		foreach (Material mat in meshRenderer.materials) {
+			mat.color *= color;
+		}
+
 	}
 
 	void OnMouseExit()
 	{
-		rend.material.color = previousColor;
+		for (int i = 0; i < originalColours.Length; i++) {
+			meshRenderer.materials [i].color = originalColours [i];
+		}
 	}
 
 }

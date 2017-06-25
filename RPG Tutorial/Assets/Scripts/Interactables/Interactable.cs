@@ -11,6 +11,8 @@ using UnityEngine.AI;
 public class Interactable : MonoBehaviour {
 
 	public float radius = 3f;
+	public Transform interactionTransform;
+	public Transform lookTarget;
 
 	bool isFocus = false;	// Is this interactable currently being focused?
 	Transform player;		// Reference to the player transform
@@ -21,7 +23,7 @@ public class Interactable : MonoBehaviour {
 	{
 		if (isFocus)	// If currently being focused
 		{
-			float distance = Vector3.Distance(player.position, transform.position);
+			float distance = Vector3.Distance(player.position, interactionTransform.position);
 			// If we haven't already interacted and the player is close enough
 			if (!hasInteracted && distance <= radius)
 			{
@@ -57,7 +59,7 @@ public class Interactable : MonoBehaviour {
 	void OnDrawGizmosSelected ()
 	{
 		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position, radius);
+		Gizmos.DrawWireSphere(interactionTransform.position, radius);
 	}
 
 }

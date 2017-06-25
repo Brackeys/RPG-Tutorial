@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 905be887fd45c714da9c1562ce073d2f, type: 3}
-  m_Name: Hair
+  m_Name: Platelegs
   m_EditorClassIdentifier: 
-  name: Hair
-  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  showInInventory: 0
-  equipSlot: 0
-  armorModifier: 0
+  name: Platelegs
+  icon: {fileID: 21300000, guid: 2adef9fa580b542ecb0262099bbc34ab, type: 3}
+  showInInventory: 1
+  equipSlot: 2
+  armorModifier: 3
   damageModifier: 0
-  prefab: {fileID: 137308877538197932, guid: 685ace39e0d784d08a913b13f76e3cdf, type: 2}
+  prefab: {fileID: 137952689360511630, guid: d0d30a8753c2547f0975df6fab9fbfce, type: 2}

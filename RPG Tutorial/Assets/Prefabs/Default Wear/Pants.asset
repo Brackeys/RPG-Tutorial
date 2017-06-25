@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pants
   icon: {fileID: 0}
+  showInInventory: 0
   equipSlot: 2
   armorModifier: 0
   damageModifier: 0

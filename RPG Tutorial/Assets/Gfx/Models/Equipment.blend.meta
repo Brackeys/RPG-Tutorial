@@ -55,6 +55,8 @@ ModelImporter:
     100094: Helmet
     100096: Shield
     100098: Sword
+    100100: Platebody
+    100102: Platelegs
     400000: Arm_lower_L
     400002: Arm_lower_R
     400004: Arm_upper_L
@@ -105,6 +107,8 @@ ModelImporter:
     400094: Helmet
     400096: Shield
     400098: Sword
+    400100: Platebody
+    400102: Platelegs
     4300000: Cube_001
     4300002: Cube
     4300004: Cube_002
@@ -112,6 +116,8 @@ ModelImporter:
     4300008: Shield
     4300010: Helmet
     4300012: Sword
+    4300014: Platelegs
+    4300016: Platebody
     7400000: Default Take
     7400002: Run
     7400004: Grip_Left
@@ -124,6 +130,8 @@ ModelImporter:
     13700008: Helmet
     13700010: Shield
     13700012: Sword
+    13700014: Platebody
+    13700016: Platelegs
   materials:
     importMaterials: 1
     materialName: 0

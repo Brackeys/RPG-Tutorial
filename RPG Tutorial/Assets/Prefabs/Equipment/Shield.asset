@@ -9,12 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 905be887fd45c714da9c1562ce073d2f, type: 3}
-  m_Name: Hair
+  m_Name: Shield
   m_EditorClassIdentifier: 
-  name: Hair
-  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  showInInventory: 0
-  equipSlot: 0
-  armorModifier: 0
+  name: Shield
+  icon: {fileID: 21300000, guid: 18e814e5172ef4f7c94dcade1d2cdc72, type: 3}
+  equipSlot: 4
+  armorModifier: 5
   damageModifier: 0
-  prefab: {fileID: 137308877538197932, guid: 685ace39e0d784d08a913b13f76e3cdf, type: 2}
+  prefab: {fileID: 137278608935997304, guid: 437d363207bc6444cbe44ea3b10c1f16, type: 2}

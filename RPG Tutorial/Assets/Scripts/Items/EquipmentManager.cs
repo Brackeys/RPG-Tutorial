@@ -26,7 +26,7 @@ public class EquipmentManager : MonoBehaviour {
 
 	// Callback for when an item is equipped
 	public delegate void OnItemEquipped(Equipment newItem, Equipment oldItem);
-	public OnItemEquipped onItemEquippedCallback;
+	public event OnItemEquipped onItemEquippedCallback;
 
 	Inventory inventory;
 
@@ -38,10 +38,16 @@ public class EquipmentManager : MonoBehaviour {
 		currentEquipment = new Equipment[numSlots];
 		currentMeshes = new SkinnedMeshRenderer[numSlots];
 
-		foreach (Equipment e in defaultWear) {
-			Equip (e);
+		EquipAllDefault ();
+	}
+
+	void Update() {
+		if (Input.GetKeyDown (KeyCode.U)) {
+			UnequipAll ();
 		}
 	}
+
+
 
 	// Equip a new item
 	public void Equip (Equipment newItem)
@@ -56,18 +62,54 @@ public class EquipmentManager : MonoBehaviour {
 		// make sure to put it back in the inventory
 		if (currentEquipment[slotIndex] != null)
 		{
-			inventory.Add(oldItem);
+			oldItem = currentEquipment [slotIndex];
+
+			if (oldItem.showInInventory) {
+				inventory.Add (oldItem);
+			}
 		}
 
 		// An item has been equipped so we trigger the callback
 		if (onItemEquippedCallback != null)
 			onItemEquippedCallback.Invoke(newItem, oldItem);
 
+		currentEquipment [slotIndex] = newItem;
 		Debug.Log(newItem.name + " equipped!");
 
 		AttachToMesh (newItem.prefab, slotIndex);
 		//equippedItems [itemIndex] = newMesh.gameObject;
 
+	}
+
+	void Unequip(int slotIndex) {
+		if (currentEquipment[slotIndex] != null)
+		{
+			Equipment oldItem = currentEquipment [slotIndex];
+
+			if (oldItem.showInInventory) {
+				inventory.Add (oldItem);
+			}
+
+			// An item has been equipped so we trigger the callback
+			if (onItemEquippedCallback != null)
+				onItemEquippedCallback.Invoke(null, oldItem);
+			
+		}
+
+	
+	}
+
+	void UnequipAll() {
+		for (int i = 0; i < currentEquipment.Length; i++) {
+			Unequip (i);
+		}
+		EquipAllDefault ();
+	}
+
+	void EquipAllDefault() {
+		foreach (Equipment e in defaultWear) {
+			Equip (e);
+		}
 	}
 
 	void AttachToMesh(SkinnedMeshRenderer mesh, int slotIndex) {

@@ -15,5 +15,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 3f259d0b1962e4015b6e97c9a0a346ea, type: 3}
   equipSlot: 3
   armorModifier: 0
-  damageModifier: 0
+  damageModifier: 2
   prefab: {fileID: 137396888519945530, guid: 62cf6928881684e68b1dd63f2c32ef0a, type: 2}

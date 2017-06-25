@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44659358, g: 0.49642974, b: 0.574825, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -840,6 +840,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  interactionTransform: {fileID: 0}
+  lookTarget: {fileID: 0}
   item: {fileID: 11400000, guid: 5724687fdf4b42d42a5f2dc2bf47ce6f, type: 2}
 --- !u!114 &230923110
 MonoBehaviour:
@@ -853,6 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0.6102941, g: 1, b: 0.62910753, a: 1}
+  meshRenderer: {fileID: 0}
 --- !u!23 &230923111
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1153,11 +1156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528e99559dd4da44a837199da1d65030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head: {fileID: 0}
-  chest: {fileID: 0}
-  legs: {fileID: 0}
-  weapon: {fileID: 0}
-  shield: {fileID: 0}
+  defaultWear: []
+  targetMesh: {fileID: 0}
 --- !u!1001 &354913633
 Prefab:
   m_ObjectHideFlags: 0
@@ -2020,7 +2020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d804c429550ab41814887b51bb9fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.2
+  attackRate: 1
 --- !u!114 &875824905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2854,6 +2854,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  interactionTransform: {fileID: 0}
+  lookTarget: {fileID: 0}
   item: {fileID: 11400000, guid: af58badeb7eda61449bd1bffafce88c6, type: 2}
 --- !u!114 &1432243232
 MonoBehaviour:
@@ -2867,6 +2869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0.6102941, g: 1, b: 0.62910753, a: 1}
+  meshRenderer: {fileID: 0}
 --- !u!23 &1432243233
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3578,6 +3581,8 @@ MonoBehaviour:
   currentZoom: 1
   maxZoom: 3
   minZoom: 0.3
+  yawSpeed: 70
+  zoomSensitivity: 0.7
 --- !u!1 &1960987333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3786,6 +3791,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  interactionTransform: {fileID: 0}
+  lookTarget: {fileID: 0}
   item: {fileID: 11400000, guid: a37c0b034067c714db18a5d8a6e838c2, type: 2}
 --- !u!114 &1984010131
 MonoBehaviour:
@@ -3799,6 +3806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0.6102941, g: 1, b: 0.62910753, a: 1}
+  meshRenderer: {fileID: 0}
 --- !u!1 &1990339408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3931,6 +3939,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  interactionTransform: {fileID: 2103996708}
+  lookTarget: {fileID: 2103996708}
 --- !u!114 &2103996704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3943,6 +3953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0.6102941, b: 0.6102941, a: 1}
+  meshRenderer: {fileID: 0}
 --- !u!23 &2103996705
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4085,7 +4096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d804c429550ab41814887b51bb9fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1
+  attackRate: 1
 --- !u!4 &2115017018 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4915397654630280, guid: 38a7baf160ff4034899db2c1e217c234,

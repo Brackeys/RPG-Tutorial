@@ -17,6 +17,7 @@ public class Enemy : Interactable {
 	// When we interact with the enemy: We attack it.
 	public override void Interact()
 	{
+		print ("Interact");
 		CharacterCombat combatManager = Player.instance.playerCombatManager;
 		combatManager.Attack(stats);
 	}

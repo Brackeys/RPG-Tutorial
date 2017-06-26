@@ -12,7 +12,6 @@ public class Interactable : MonoBehaviour {
 
 	public float radius = 3f;
 	public Transform interactionTransform;
-	public Transform lookTarget;
 
 	bool isFocus = false;	// Is this interactable currently being focused?
 	Transform player;		// Reference to the player transform

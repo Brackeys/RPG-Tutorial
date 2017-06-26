@@ -13,7 +13,6 @@ using UnityEngine.AI;
 public class PlayerMotor : MonoBehaviour {
 
 	Transform target;
-	Transform lookTarget;
 	NavMeshAgent agent;     // Reference to our NavMeshAgent
 
 	void Start ()
@@ -31,10 +30,10 @@ public class PlayerMotor : MonoBehaviour {
 	{
 		if (newFocus != null)
 		{
-			agent.stoppingDistance = newFocus.radius;
+			agent.stoppingDistance = newFocus.radius*.8f;
 			agent.updateRotation = false;
+
 			target = newFocus.interactionTransform;
-			lookTarget = newFocus.lookTarget;
 		}
 		else
 		{
@@ -49,29 +48,17 @@ public class PlayerMotor : MonoBehaviour {
 		if (target != null)
 		{
 			MoveToPoint (target.position);
-			if (lookTarget != null) {
-				FaceTarget ();
-			}
+			FaceTarget ();
+
 		}
 	}
 
 	void FaceTarget()
 	{
-		Vector3 direction = (lookTarget.transform.position - transform.position).normalized;
+		Vector3 direction = (target.position - transform.position).normalized;
 		Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 	}
-
-	public float maxSpeed {
-		get {
-			return agent.speed;
-		}
-	}
-
-	public float currentSpeed  {
-		get {
-			return agent.velocity.magnitude;
-		}
-	}
+		
 
 }

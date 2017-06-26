@@ -10,6 +10,8 @@ public class CharacterCombat : MonoBehaviour {
 	public float attackRate = 1f;
 	private float attackCountdown = 0f;
 
+	public event System.Action OnAttack;
+
 	CharacterStats myStats;
 
 	void Start ()
@@ -29,7 +31,12 @@ public class CharacterCombat : MonoBehaviour {
 			Debug.Log(transform.name + " swings for " + myStats.damage.GetValue() + " damage");
 			enemyStats.TakeDamage(myStats.damage.GetValue());
 			attackCountdown = 1f / attackRate;
+
+			if (OnAttack != null) {
+				OnAttack ();
+			}
 		}
 	}
+
 
 }

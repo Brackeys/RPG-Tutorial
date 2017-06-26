@@ -2,22 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimator : MonoBehaviour {
-
-	public Animator animator;
-	PlayerMotor motor;
+public class PlayerAnimator : CharacterAnimator {
 
 	void Awake() {
 		EquipmentManager.instance.onItemEquippedCallback += OnItemEquiped;
 	}
 
-	void Start() {
-		motor = GetComponent<PlayerMotor> ();
+	protected override void Start() {
+		base.Start ();
 	}
-
-	void Update () {
-		animator.SetFloat ("Speed Percent", motor.currentSpeed/motor.maxSpeed,.1f,Time.deltaTime);
-	}
+		
 
 	void OnItemEquiped(Equipment newItem, Equipment oldItem) {
 

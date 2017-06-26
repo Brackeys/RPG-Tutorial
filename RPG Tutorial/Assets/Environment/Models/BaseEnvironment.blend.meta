@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: ae02a22f1b8d14810a92c3d05d1e9072
+timeCreated: 1498318908
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Circle
+    100002: Cube
+    100004: Cube_001
+    100006: Cube_002
+    100008: Cube_004
+    100010: Cube_005
+    100012: Cube_006
+    100014: Cube_007
+    100016: //RootNode
+    100018: Plane
+    100020: Bridge
+    100022: Ground
+    100024: Mage_circle
+    100026: River
+    100028: Rock
+    100030: Rock2
+    100032: Rock3
+    100034: Rock4
+    100036: Rock5
+    400000: Circle
+    400002: Cube
+    400004: Cube_001
+    400006: Cube_002
+    400008: Cube_004
+    400010: Cube_005
+    400012: Cube_006
+    400014: Cube_007
+    400016: //RootNode
+    400018: Plane
+    400020: Bridge
+    400022: Ground
+    400024: Mage_circle
+    400026: River
+    400028: Rock
+    400030: Rock2
+    400032: Rock3
+    400034: Rock4
+    400036: Rock5
+    2300000: Circle
+    2300002: Cube
+    2300004: Cube_001
+    2300006: Cube_002
+    2300008: Cube_004
+    2300010: Cube_005
+    2300012: Cube_006
+    2300014: Cube_007
+    2300016: Plane
+    2300018: Bridge
+    2300020: Ground
+    2300022: Mage_circle
+    2300024: River
+    2300026: Rock
+    2300028: Rock2
+    2300030: Rock3
+    2300032: Rock4
+    2300034: Rock5
+    3300000: Circle
+    3300002: Cube
+    3300004: Cube_001
+    3300006: Cube_002
+    3300008: Cube_004
+    3300010: Cube_005
+    3300012: Cube_006
+    3300014: Cube_007
+    3300016: Plane
+    3300018: Bridge
+    3300020: Ground
+    3300022: Mage_circle
+    3300024: River
+    3300026: Rock
+    3300028: Rock2
+    3300030: Rock3
+    3300032: Rock4
+    3300034: Rock5
+    4300000: Plane
+    4300002: Cube_007
+    4300004: Cube_006
+    4300006: Cube_005
+    4300008: Cube_004
+    4300010: Cube_002
+    4300012: Cube_001
+    4300014: Cube
+    4300016: Circle
+    4300018: Bridge
+    4300020: River
+    4300022: Ground
+    4300024: Rock
+    4300026: Rock3
+    4300028: Rock4
+    4300030: Rock2
+    4300032: Rock5
+    4300034: Mage_circle
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2264,15 +2264,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: bd4b5db5f48124a5bba473b348e43b25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5
+      value: -2.13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd4b5db5f48124a5bba473b348e43b25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.21000004
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd4b5db5f48124a5bba473b348e43b25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.8
+      value: -0.67
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd4b5db5f48124a5bba473b348e43b25, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6321,15 +6321,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4087213181031252, guid: 1d4e8fdf08b2060448400dd060a320a5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.107
+      value: -1.73
       objectReference: {fileID: 0}
     - target: {fileID: 4087213181031252, guid: 1d4e8fdf08b2060448400dd060a320a5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.079
+      value: -3.548
       objectReference: {fileID: 0}
     - target: {fileID: 4087213181031252, guid: 1d4e8fdf08b2060448400dd060a320a5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -2.91
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 4087213181031252, guid: 1d4e8fdf08b2060448400dd060a320a5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6561,7 +6561,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1645469741}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
   m_LocalPosition: {x: -11.1, y: -4.674, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6569,7 +6569,7 @@ Transform:
   - {fileID: 1220207730}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
 --- !u!114 &1645469751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6790,12 +6790,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1645469750}
-  offset: {x: 2.07, y: 8.78, z: -11.98}
-  currentZoom: 0.5
-  maxZoom: 0.75
-  minZoom: 0.3
-  yawSpeed: 70
-  zoomSensitivity: 0.7
+  offset: {x: 0, y: -0.5, z: 0}
+  smoothSpeed: 2
+  currentZoom: 7
+  minZoom: 5
+  maxZoom: 10
+  zoomSensitivity: 5
 --- !u!4 &1730976881 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4002246828333360, guid: a5b6531bd8601e34ea81fc1e43782119,

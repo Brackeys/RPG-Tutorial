@@ -6,38 +6,50 @@ public class HealthUI : MonoBehaviour {
 
 	const float stayTime = 3;
 
-	public Transform target;
-	public CharacterStats stats;
+
 	public RectTransform healthSlider;
 	public GameObject graphic;
+
 	Transform cam;
+	Transform target;
+	CharacterStats stats;
 
 	float healthPercentOld;
 	float lastHealthChangeTime;
 
+	public void Init(Transform target, CharacterStats stats) {
+		this.target = target;
+		this.stats = stats;
 
-	void Start () {
 		cam = Camera.main.transform;
 		graphic.SetActive (false);
 		healthPercentOld = GetHealthPercent ();
 	}
 
 	void LateUpdate () {
+		if (target == null) {
+			Destroy (gameObject);
+			return;
+		}
 		transform.position = target.position;
-		transform.LookAt (cam.position,Vector3.down);
+		transform.LookAt (cam.position, Vector3.down);
 
 		float healthPercent = GetHealthPercent ();
 		healthSlider.localScale = new Vector3 (healthPercent, 1, 1);
 
-		if (!Mathf.Approximately(healthPercent,healthPercentOld)) {
+		if (!Mathf.Approximately (healthPercent, healthPercentOld)) {
 			healthPercentOld = healthPercent;
 			lastHealthChangeTime = Time.time;
 			graphic.SetActive (true);
 		}
 
-		if (Time.time - lastHealthChangeTime > stayTime) {
-			graphic.SetActive (false);
+		if (graphic.activeSelf) {
+			if (Time.time - lastHealthChangeTime > stayTime) {
+				graphic.SetActive (false);
+			}
 		}
+		
+	
 	}
 
 	float GetHealthPercent() {

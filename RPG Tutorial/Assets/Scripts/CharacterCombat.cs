@@ -12,11 +12,14 @@ public class CharacterCombat : MonoBehaviour {
 
 	public event System.Action OnAttack;
 
+	public Transform healthBarPos;
+
 	CharacterStats myStats;
 
 	void Start ()
 	{
 		myStats = GetComponent<CharacterStats>();
+		HealthUIManager.instance.Create (healthBarPos, myStats);
 	}
 
 	void Update ()

@@ -828,7 +828,7 @@ ModelImporter:
       name: Attack_Sword_02
       takeName: Attack_Sword_02
       firstFrame: 0
-      lastFrame: 34
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -944,7 +944,7 @@ ModelImporter:
       name: Attack_Unarmed_01
       takeName: Attack_Unarmed_01
       firstFrame: -1
-      lastFrame: 29
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -57,6 +57,7 @@ ModelImporter:
     100098: Sword
     100100: Platebody
     100102: Platelegs
+    100104: Pants
     400000: Arm_lower_L
     400002: Arm_lower_R
     400004: Arm_upper_L
@@ -109,6 +110,7 @@ ModelImporter:
     400098: Sword
     400100: Platebody
     400102: Platelegs
+    400104: Pants
     4300000: Cube_001
     4300002: Cube
     4300004: Cube_002
@@ -118,6 +120,7 @@ ModelImporter:
     4300012: Sword
     4300014: Platelegs
     4300016: Platebody
+    4300018: Pants
     7400000: Default Take
     7400002: Run
     7400004: Grip_Left
@@ -132,6 +135,7 @@ ModelImporter:
     13700012: Sword
     13700014: Platebody
     13700016: Platelegs
+    13700018: Pants
   materials:
     importMaterials: 1
     materialName: 0

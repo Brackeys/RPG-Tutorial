@@ -15,6 +15,8 @@ public class CharacterCombat : MonoBehaviour {
 	public Transform healthBarPos;
 
 	CharacterStats myStats;
+	CharacterStats enemyStats;
+
 
 	void Start ()
 	{
@@ -31,14 +33,28 @@ public class CharacterCombat : MonoBehaviour {
 	{
 		if (attackCountdown <= 0f)
 		{
-			Debug.Log(transform.name + " swings for " + myStats.damage.GetValue() + " damage");
-			enemyStats.TakeDamage(myStats.damage.GetValue());
+			this.enemyStats = enemyStats;
 			attackCountdown = 1f / attackRate;
+
+			StartCoroutine(DoDamage(enemyStats,.6f));
 
 			if (OnAttack != null) {
 				OnAttack ();
 			}
 		}
+	}
+
+
+	IEnumerator DoDamage(CharacterStats stats, float delay) {
+		print ("Start");
+		yield return new WaitForSeconds (delay);
+
+		Debug.Log (transform.name + " swings for " + myStats.damage.GetValue () + " damage");
+		enemyStats.TakeDamage (myStats.damage.GetValue ());
+
+
+
+
 	}
 
 

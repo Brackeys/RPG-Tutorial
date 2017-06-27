@@ -32,7 +32,7 @@ public class HealthUI : MonoBehaviour {
 			return;
 		}
 		transform.position = target.position;
-		transform.LookAt (cam.position, Vector3.down);
+		transform.LookAt (new Vector3(cam.position.x,transform.position.y,cam.position.z), Vector3.down);
 
 		float healthPercent = GetHealthPercent ();
 		healthSlider.localScale = new Vector3 (healthPercent, 1, 1);

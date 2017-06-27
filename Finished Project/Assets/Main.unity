@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 607406313}
-  m_IndirectSpecularColor: {r: 0.18329291, g: 0.22892582, b: 0.3062974, a: 1}
+  m_IndirectSpecularColor: {r: 0.18329246, g: 0.22892538, b: 0.306297, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -529,7 +529,7 @@ Prefab:
     - target: {fileID: 2300000, guid: b2b9a31b76e54409cb67dcdf905d34e6, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 8fb940227ec1e45dfa542529d49a18de, type: 2}
+      objectReference: {fileID: 2100000, guid: 8bae11c0f791a4d0a8a201db8ee405c8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2b9a31b76e54409cb67dcdf905d34e6, type: 3}
   m_IsPrefabParent: 0
@@ -1073,7 +1073,7 @@ Prefab:
     - target: {fileID: 2300000, guid: b2b9a31b76e54409cb67dcdf905d34e6, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 8fb940227ec1e45dfa542529d49a18de, type: 2}
+      objectReference: {fileID: 2100000, guid: 8bae11c0f791a4d0a8a201db8ee405c8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2b9a31b76e54409cb67dcdf905d34e6, type: 3}
   m_IsPrefabParent: 0
@@ -2505,8 +2505,9 @@ Prefab:
     - target: {fileID: 2300000, guid: bd4b5db5f48124a5bba473b348e43b25, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 8fb940227ec1e45dfa542529d49a18de, type: 2}
-    m_RemovedComponents: []
+      objectReference: {fileID: 2100000, guid: 8bae11c0f791a4d0a8a201db8ee405c8, type: 2}
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: bd4b5db5f48124a5bba473b348e43b25, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: bd4b5db5f48124a5bba473b348e43b25, type: 3}
   m_IsPrefabParent: 0
 --- !u!4 &684305083 stripped
@@ -3381,6 +3382,11 @@ Prefab:
       propertyPath: weaponAnimations.Array.data[1].weaponIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 195266525255351556, guid: 4a5e8315f342741d1963b87f80a4a332,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a5e8315f342741d1963b87f80a4a332, type: 2}
   m_IsPrefabParent: 0
@@ -3442,7 +3448,7 @@ Prefab:
     - target: {fileID: 2300000, guid: bd4b5db5f48124a5bba473b348e43b25, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 8fb940227ec1e45dfa542529d49a18de, type: 2}
+      objectReference: {fileID: 2100000, guid: 8bae11c0f791a4d0a8a201db8ee405c8, type: 2}
     - target: {fileID: 100000, guid: bd4b5db5f48124a5bba473b348e43b25, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -4639,7 +4645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -214.00002, y: 280}
+  m_AnchoredPosition: {x: -214, y: 280}
   m_SizeDelta: {x: 288.1, y: 369}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1290923796

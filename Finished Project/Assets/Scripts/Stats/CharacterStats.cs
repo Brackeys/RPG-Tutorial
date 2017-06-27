@@ -25,7 +25,7 @@ public class CharacterStats : MonoBehaviour {
 	{
 		// Subtract the armor value - Make sure damage doesn't go below 0.
 		damage -= armor.GetValue();
-		Mathf.Clamp(damage, 0, int.MaxValue);
+		damage = Mathf.Clamp(damage, 0, int.MaxValue);
 
 		// Subtract damage from health
 		currentHealth -= damage;

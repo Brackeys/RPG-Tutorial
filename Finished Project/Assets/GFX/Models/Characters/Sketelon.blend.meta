@@ -47,6 +47,18 @@ ModelImporter:
     100078: Thumb02_R
     100080: Toes_L
     100082: Toes_R
+    100084: Cube_001
+    100086: Cube_002
+    100088: Cube_003
+    100090: Cube_004
+    100092: Cube_005
+    100094: Cube_006
+    100096: Cube_007
+    100098: Cube_008
+    100100: Cube_009
+    100102: Cube_010
+    100104: Separate_bones
+    100106: Skeleton_mesh
     400000: Arm_lower_L
     400002: Arm_lower_R
     400004: Arm_lower_R_001
@@ -89,13 +101,47 @@ ModelImporter:
     400078: Thumb02_R
     400080: Toes_L
     400082: Toes_R
+    400084: Cube_001
+    400086: Cube_002
+    400088: Cube_003
+    400090: Cube_004
+    400092: Cube_005
+    400094: Cube_006
+    400096: Cube_007
+    400098: Cube_008
+    400100: Cube_009
+    400102: Cube_010
+    400104: Separate_bones
+    400106: Skeleton_mesh
     4300000: Cube
+    4300002: Cube_010
+    4300004: Cube_009
+    4300006: Cube_008
+    4300008: Cube_007
+    4300010: Cube_006
+    4300012: Cube_005
+    4300014: Cube_004
+    4300016: Cube_003
+    4300018: Cube_002
+    4300020: Cube_001
+    4300022: Skeleton_mesh
     7400000: Default Take
     7400002: Attack_01
     7400004: Idle
     7400006: Walk
     9500000: //RootNode
     13700000: Cube
+    13700002: Cube_001
+    13700004: Cube_002
+    13700006: Cube_003
+    13700008: Cube_004
+    13700010: Cube_005
+    13700012: Cube_006
+    13700014: Cube_007
+    13700016: Cube_008
+    13700018: Cube_009
+    13700020: Cube_010
+    13700022: Skeleton_mesh
   materials:
     importMaterials: 1
     materialName: 0

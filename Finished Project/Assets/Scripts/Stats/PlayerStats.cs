@@ -33,10 +33,6 @@ public class PlayerStats : CharacterStats {
 
 	}
 
-	public override void Die()
-	{
-		Debug.Log("Player died! Let's restart :)");
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-	}
+
 
 }

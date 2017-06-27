@@ -10,6 +10,8 @@ public class CharacterStats : MonoBehaviour {
 	public Stat damage;
 	public Stat armor;
 
+	public event System.Action OnHealthReachedZero;
+
 	public virtual void Awake() {
 		currentHealth = maxHealth.GetValue();
 	}
@@ -34,7 +36,9 @@ public class CharacterStats : MonoBehaviour {
 		// If we hit 0. Die.
 		if (currentHealth <= 0)
 		{
-			Die();
+			if (OnHealthReachedZero != null) {
+				OnHealthReachedZero ();
+			}
 		}
 	}
 
@@ -45,11 +49,6 @@ public class CharacterStats : MonoBehaviour {
 		currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth.GetValue());
 	}
 
-	// Die. This can be overwritten.
-	public virtual void Die ()
-	{
-		Debug.Log(transform.name + " died.");
-		Destroy(gameObject);
-	}
+
 
 }

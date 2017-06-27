@@ -8,10 +8,12 @@ using UnityEngine;
 public class Enemy : Interactable {
 
 	CharacterStats stats;
+	public RagdollManager ragdoll;
 
 	void Start ()
 	{
 		stats = GetComponent<CharacterStats>();
+		stats.OnHealthReachedZero += Die;
 	}
 
 	// When we interact with the enemy: We attack it.
@@ -20,6 +22,12 @@ public class Enemy : Interactable {
 		print ("Interact");
 		CharacterCombat combatManager = Player.instance.playerCombatManager;
 		combatManager.Attack(stats);
+	}
+
+	void Die() {
+		ragdoll.transform.parent = null;
+		ragdoll.Setup ();
+		Destroy (gameObject);
 	}
 
 }

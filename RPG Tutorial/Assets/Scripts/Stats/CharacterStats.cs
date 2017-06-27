@@ -5,8 +5,7 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour {
 
 	public Stat maxHealth;			// Maximum amount of health
-	[SerializeField]
-	private int currentHealth;		// Current amount of health
+	public int currentHealth {get;protected set;}	// Current amount of health
 
 	public Stat damage;
 	public Stat armor;

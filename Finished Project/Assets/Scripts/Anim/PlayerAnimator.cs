@@ -22,13 +22,14 @@ public class PlayerAnimator : CharacterAnimator {
 		if (currentWeaponAnimation != null) {
 			int attackIndex = Random.Range (0, currentWeaponAnimation.numAnimations);
 			animator.SetFloat ("Attack Index", attackIndex);
+			animator.SetFloat ("Weapon Index", currentWeaponAnimation.weaponIndex);
 		}
 
 		base.OnAttack ();
 	}
 
 	void OnEquipmentChanged(Equipment newItem, Equipment oldItem) {
-
+		
 		if (oldItem != null) {
 			if (oldItem.equipSlot == EquipmentSlot.Weapon) {
 				animator.SetLayerWeight (1, 0); // right hand grip full weight
@@ -39,21 +40,22 @@ public class PlayerAnimator : CharacterAnimator {
 		}
 
 		if (newItem != null) {
+			
 			if (newItem.equipSlot == EquipmentSlot.Weapon) {
-				//WeaponAnimation[] applicableAnimations = weaponAnimations.TakeWhile(x=>x.weapons.Contains(newItem)).ToArray();
-				WeaponAnimation newC = weaponAnimations.First(x=>x.weapons.Contains(newItem));
-				print (newC);
+				WeaponAnimation newC = weaponAnimations.First (x => x.weapons.Contains (newItem));
 				if (newC != null) {
 					currentWeaponAnimation = newC;
-					animator.SetFloat ("Weapon Index", currentWeaponAnimation.weaponIndex);
-				}
 
+				}
 				animator.SetLayerWeight (1, 1); // right hand grip full weight
 			}
 			if (newItem.equipSlot == EquipmentSlot.Shield) {
 				animator.SetLayerWeight (2, 1); // left hand grip full weight
 			}
 		}
+
+	
+
 	}
 
 	[System.Serializable]

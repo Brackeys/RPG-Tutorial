@@ -87,7 +87,9 @@ public class EquipmentManager : MonoBehaviour {
 		currentEquipment [slotIndex] = newItem;
 		Debug.Log(newItem.name + " equipped!");
 
-		AttachToMesh (newItem.prefab, slotIndex);
+		if (newItem.prefab) {
+			AttachToMesh (newItem.prefab, slotIndex);
+		}
 		//equippedItems [itemIndex] = newMesh.gameObject;
 
 	}

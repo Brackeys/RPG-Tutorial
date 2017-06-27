@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 607406313}
-  m_IndirectSpecularColor: {r: 0.18329246, g: 0.22892538, b: 0.306297, a: 1}
+  m_IndirectSpecularColor: {r: 0.18329291, g: 0.22892582, b: 0.3062974, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3329,6 +3329,11 @@ Prefab:
       propertyPath: weaponAnimations.Array.data[1].weapons.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114555136790508838, guid: 4a5e8315f342741d1963b87f80a4a332,
+        type: 2}
+      propertyPath: weaponAnimations.Array.data[0].weapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4649988152852904, guid: 4a5e8315f342741d1963b87f80a4a332, type: 2}
       propertyPath: m_LocalPosition.x
       value: -11.1
@@ -3387,6 +3392,12 @@ Prefab:
       propertyPath: m_Acceleration
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114555136790508838, guid: 4a5e8315f342741d1963b87f80a4a332,
+        type: 2}
+      propertyPath: weaponAnimations.Array.data[0].weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 70c79ed0aa29f4a53b0863a1bec53d3f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a5e8315f342741d1963b87f80a4a332, type: 2}
   m_IsPrefabParent: 0
@@ -4218,6 +4229,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 44a12c7999a3e4330a0336b9b69a1715, type: 2}
   - {fileID: 11400000, guid: 71c768b2ed5704650a709d5e3d5da2df, type: 2}
   - {fileID: 11400000, guid: 46c9355d19e7d46a5bf99f39c5b4df93, type: 2}
+  - {fileID: 11400000, guid: 70c79ed0aa29f4a53b0863a1bec53d3f, type: 2}
   targetMesh: {fileID: 1710939696}
 --- !u!114 &1151928158
 MonoBehaviour:

@@ -57,6 +57,9 @@ public class EquipmentManager : MonoBehaviour {
 	}
 
 
+	public Equipment GetEquipment(EquipmentSlot slot) {
+		return currentEquipment [(int)slot];
+	}
 
 	// Equip a new item
 	public void Equip (Equipment newItem)

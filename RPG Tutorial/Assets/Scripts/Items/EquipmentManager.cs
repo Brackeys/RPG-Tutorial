@@ -25,8 +25,8 @@ public class EquipmentManager : MonoBehaviour {
 	public SkinnedMeshRenderer targetMesh;
 
 	// Callback for when an item is equipped
-	public delegate void OnItemEquipped(Equipment newItem, Equipment oldItem);
-	public event OnItemEquipped onItemEquippedCallback;
+	public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
+	public event OnEquipmentChanged onEquipmentChanged;
 
 	Inventory inventory;
 
@@ -70,8 +70,8 @@ public class EquipmentManager : MonoBehaviour {
 		}
 
 		// An item has been equipped so we trigger the callback
-		if (onItemEquippedCallback != null)
-			onItemEquippedCallback.Invoke(newItem, oldItem);
+		if (onEquipmentChanged != null)
+			onEquipmentChanged.Invoke(newItem, oldItem);
 
 		currentEquipment [slotIndex] = newItem;
 		Debug.Log(newItem.name + " equipped!");
@@ -85,14 +85,17 @@ public class EquipmentManager : MonoBehaviour {
 		if (currentEquipment[slotIndex] != null)
 		{
 			Equipment oldItem = currentEquipment [slotIndex];
-
-			if (oldItem.showInInventory) {
-				inventory.Add (oldItem);
+			inventory.Add(oldItem);
+				
+			currentEquipment [slotIndex] = null;
+			if (currentMeshes [slotIndex] != null) {
+				Destroy (currentMeshes [slotIndex].gameObject);
 			}
 
-			// An item has been equipped so we trigger the callback
-			if (onItemEquippedCallback != null)
-				onItemEquippedCallback.Invoke(null, oldItem);
+
+			// Equipment has been removed so we trigger the callback
+			if (onEquipmentChanged != null)
+				onEquipmentChanged.Invoke(null, oldItem);
 			
 		}
 

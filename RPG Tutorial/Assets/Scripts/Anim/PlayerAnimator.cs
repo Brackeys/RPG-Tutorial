@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimator : CharacterAnimator {
 
 	void Awake() {
-		EquipmentManager.instance.onItemEquippedCallback += OnItemEquiped;
+		EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
 	}
 
 	protected override void Start() {
@@ -13,7 +13,7 @@ public class PlayerAnimator : CharacterAnimator {
 	}
 		
 
-	void OnItemEquiped(Equipment newItem, Equipment oldItem) {
+	void OnEquipmentChanged(Equipment newItem, Equipment oldItem) {
 
 		if (oldItem != null) {
 			if (oldItem.equipSlot == EquipmentSlot.Weapon) {

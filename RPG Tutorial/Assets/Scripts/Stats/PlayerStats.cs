@@ -15,10 +15,10 @@ public class PlayerStats : CharacterStats {
 	public override void Start () {
 
 		base.Start();
-		EquipmentManager.instance.onItemEquippedCallback += OnEquippedItem;
+		EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
 	}
 
-	void OnEquippedItem(Equipment newItem, Equipment oldItem)
+	void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
 	{
 		if (newItem != null) {
 			armor.AddModifier (newItem.armorModifier);

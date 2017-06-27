@@ -10,10 +10,14 @@ public class CharacterStats : MonoBehaviour {
 	public Stat damage;
 	public Stat armor;
 
+	public virtual void Awake() {
+		currentHealth = maxHealth.GetValue();
+	}
+
 	// Start with max HP.
 	public virtual void Start ()
 	{
-		currentHealth = maxHealth.GetValue();
+		
 	}
 
 	// Damage the character

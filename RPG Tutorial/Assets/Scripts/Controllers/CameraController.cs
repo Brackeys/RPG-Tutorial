@@ -10,21 +10,38 @@ public class CameraController : MonoBehaviour {
 	public float smoothSpeed = 2f;
 
 	public float currentZoom = 1f;
-	public float minZoom = .3f;
 	public float maxZoom = 3f;
+	public float minZoom = .3f;
+	public float yawSpeed = 70;
 	public float zoomSensitivity = .7f;
+	float dst;
+
+	float zoomSmoothV;
+	float targetZoom;
+
+	void Start() {
+		dst = offset.magnitude;
+		transform.LookAt (target);
+		targetZoom = currentZoom;
+	}
 
 	void Update ()
 	{
-		currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity;
-		currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
+		float scroll = Input.GetAxisRaw("Mouse ScrollWheel") * zoomSensitivity;
+
+		if (scroll != 0f)
+		{
+			targetZoom = Mathf.Clamp(targetZoom - scroll, minZoom, maxZoom);
+		}
+		currentZoom = Mathf.SmoothDamp (currentZoom, targetZoom, ref zoomSmoothV, .15f);
 	}
 
 	void LateUpdate () {
-		Vector3 desiredPos = target.position - (target.forward + offset) * currentZoom;
-		Vector3 smoothedPos = Vector3.Lerp(transform.position, desiredPos, Time.deltaTime * smoothSpeed);
-        transform.position = smoothedPos;
-
+		transform.position = target.position - transform.forward * dst * currentZoom;
 		transform.LookAt(target.position);
+
+		float yawInput = Input.GetAxisRaw ("Horizontal");
+		transform.RotateAround (target.position, Vector3.up, -yawInput * yawSpeed * Time.deltaTime);
 	}
+
 }

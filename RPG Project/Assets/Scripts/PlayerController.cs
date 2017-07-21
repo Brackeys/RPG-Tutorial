@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 /* Controls the player. Here we choose our "focus" and where to move. */
@@ -22,6 +21,9 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (EventSystem.current.IsPointerOverGameObject())
+			return;
 
 		// If we press left mouse
 		if (Input.GetMouseButtonDown(0))

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b96f12f6108ae4c7c830b53377f99e6c
+guid: 6e343f10f6a4a4b22ac8cd87309aa5b3
 timeCreated: 1500495027
 licenseType: Pro
 ModelImporter:
@@ -48,7 +48,6 @@ ModelImporter:
     100080: Armour
     100082: Default_clothing
     100084: Equipment
-    100086: Platebody_001
     400000: Armature
     400002: Chest
     400004: Cube
@@ -92,7 +91,6 @@ ModelImporter:
     400080: Armour
     400082: Default_clothing
     400084: Equipment
-    400086: Platebody_001
     2300000: Cube_001
     2300002: Armour
     3300000: Cube_001
@@ -107,7 +105,6 @@ ModelImporter:
     4300014: Helmet
     4300016: Hair
     4300018: Armour
-    4300020: Platebody_001
     7400000: Default Take
     7400002: Idle
     7400004: Run
@@ -121,7 +118,6 @@ ModelImporter:
     13700010: Platelegs
     13700012: Shirt
     13700014: Shoes
-    13700016: Platebody_001
   materials:
     importMaterials: 1
     materialName: 0
@@ -297,7 +293,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

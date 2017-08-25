@@ -10,12 +10,14 @@ public class EnemyController : MonoBehaviour {
 	public float lookRadius = 10f;	// Detection range for player
 
 	Transform target;	// Reference to the player
-	NavMeshAgent agent;	// Reference to the NavMeshAgent
+	NavMeshAgent agent; // Reference to the NavMeshAgent
+	CharacterCombat combat;
 
 	// Use this for initialization
 	void Start () {
 		target = PlayerManager.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
+		combat = GetComponent<CharacterCombat>();
 	}
 	
 	// Update is called once per frame
@@ -32,7 +34,12 @@ public class EnemyController : MonoBehaviour {
 			// If within attacking distance
 			if (distance <= agent.stoppingDistance)
 			{
-				// Attack the target
+				CharacterStats targetStats = target.GetComponent<CharacterStats>();
+				if (targetStats != null)
+				{
+					combat.Attack(targetStats);
+				}
+
 				FaceTarget();	// Make sure to face towards the target
 			}
 		}
